@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nourriture - Banque d'images</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="nourriture">
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">Banque d'images</div>
+    <nav class="topnav">
+      <a href="index.html">Accueil</a>
+      <a href="wallpapers.html">Wallpapers</a>
+      <a href="paysages.html">Paysages</a>
+      <a href="voitures.html">Voitures</a>
+      <a href="technologie.html">Technologie</a>
+      <a href="nourriture.html" class="active">Nourriture</a>
+      <a href="sport.html">Sport</a>
+      <a href="voyage.html">Voyage</a>
+      <a href="mode.html">Mode</a>
+      <a href="animaux.html">Animaux</a>
+    </nav>
+    <input type="text" id="search" class="search-input" placeholder="Rechercher une image...">
+    <button id="theme-toggle" class="theme-btn">🌙</button>
+  </header>
+
+  <main class="container">
+    <section class="hero scroll-reveal">
+      <h1 id="page-title">Nourriture</h1>
+      <p>Galerie de 30 images de plats délicieux et appétissants.</p>
+    </section>
+
+    <section id="gallery-grid" class="grid scroll-reveal"></section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+</body>
+</html>
