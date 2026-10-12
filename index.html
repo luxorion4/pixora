@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banque d'images</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Polices premium -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body data-page="index">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="brand">Banque d'images</div>
+
+    <nav class="topnav">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="wallpapers.html">Wallpapers</a>
+      <a href="paysages.html">Paysages</a>
+      <a href="voitures.html">Voitures</a>
+      <a href="technologie.html">Technologie</a>
+      <a href="nourriture.html">Nourriture</a>
+      <a href="sport.html">Sport</a>
+      <a href="voyage.html">Voyage</a>
+      <a href="mode.html">Mode</a>
+      <a href="animaux.html">Animaux</a>
+    </nav>
+
+    <button id="theme-toggle" class="theme-btn">🌙</button>
+  </header>
+
+  <!-- CONTENU -->
+  <main class="container">
+
+    <section class="hero">
+      <h1>Plus de 250 photos HD</h1>
+      <p>Téléchargez et utilisez des photos de haute qualité pour vos créations.</p>
+    </section>
+
+    <section class="categories">
+      <a class="category-card" href="wallpapers.html" style="background-image: url('images/wallpapers/wallpaper10.jpg');"><h3>Wallpapers</h3><p>Images de fonds modernes</p></a>
+      <a class="category-card" href="paysages.html" style="background-image: url('images/paysages/paysage13.jpg');"><h3>Paysages</h3><p>Nature et environnements</p></a>
+      <a class="category-card" href="voitures.html" style="background-image: url('images/voitures/voiture11.jpg');"><h3>Voitures</h3><p>Véhicules élégants</p></a>
+      <a class="category-card" href="technologie.html" style="background-image: url('images/technologie/technologie15.jpg');"><h3>Technologie</h3><p>Électronique et innovation</p></a>
+      <a class="category-card" href="nourriture.html" style="background-image: url('images/nourriture/nourriture2.jpg');"><h3>Nourriture</h3><p>Plats délicieux</p></a>
+      <a class="category-card" href="sport.html" style="background-image: url('images/sport/sport2.jpg');"><h3>Sport</h3><p>Action et énergie</p></a>
+      <a class="category-card" href="voyage.html" style="background-image: url('images/voyage/voyage25.jpg');"><h3>Voyage</h3><p>Paysages lointains</p></a>
+      <a class="category-card" href="mode.html" style="background-image: url('images/mode/mode23.jpg');"><h3>Mode</h3><p>Styles tendance</p></a>
+      <a class="category-card" href="animaux.html" style="background-image: url('images/animaux/animaux12.jpg');"><h3>Animaux</h3><p>Faune inspirante</p></a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+  
+<script src="theme.js"></script>
+  <!-- FOOTER LOADER -->
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+<script>
+const toggle = document.getElementById("theme-toggle");
+
+// Charger le thème sauvegardé
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+  toggle.textContent = "☀️";
+}
+
+// Changer le thème
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+
+  const isLight = document.body.classList.contains("light");
+
+  toggle.textContent = isLight ? "☀️" : "🌙";
+
+  // Sauvegarde
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+});
+</script>
+
+
+</body>
+</html>

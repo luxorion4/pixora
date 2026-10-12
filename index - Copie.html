@@ -1,0 +1,146 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banque d'images</title>
+
+  <!-- Polices premium -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="index">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="brand">Banque d'images</div>
+
+    <nav class="topnav">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="wallpapers.html">Wallpapers</a>
+      <a href="paysages.html">Paysages</a>
+      <a href="voitures.html">Voitures</a>
+      <a href="technologie.html">Technologie</a>
+      <a href="nourriture.html">Nourriture</a>
+      <a href="sport.html">Sport</a>
+      <a href="voyage.html">Voyage</a>
+      <a href="mode.html">Mode</a>
+      <a href="animaux.html">Animaux</a>
+    </nav>
+
+    <button id="theme-toggle" class="theme-btn">🌙</button>
+  </header>
+
+  <!-- CONTENU -->
+  <main class="container">
+
+    <!-- HERO PREMIUM -->
+    <section class="hero" style="background: linear-gradient(135deg, #1f2937, #0f172a); padding: 2.5rem;">
+      <h1 style="font-size: 2.8rem;">Découvrez plus de 250 photos HD</h1>
+      <p style="margin-top: .5rem; font-size: 1.1rem;">Téléchargez gratuitement des images de haute qualité pour vos projets créatifs.</p>
+
+      <a href="wallpapers.html" class="btn" style="margin-top: 1rem; font-size: 1rem;">Explorer les images</a>
+    </section>
+
+    <!-- CATEGORIES POPULAIRES -->
+    <h2 style="margin-top: 2rem;">Catégories populaires</h2>
+    <section class="categories" style="margin-top: 1rem;">
+      <a class="category-card" href="wallpapers.html" style="background-image: url('images/wallpapers/wallpaper10.jpg');"><h3>Wallpapers</h3><p>Images de fonds modernes</p></a>
+      <a class="category-card" href="paysages.html" style="background-image: url('images/paysages/paysage13.jpg');"><h3>Paysages</h3><p>Nature et environnements</p></a>
+      <a class="category-card" href="voitures.html" style="background-image: url('images/voitures/voiture11.jpg');"><h3>Voitures</h3><p>Véhicules élégants</p></a>
+      <a class="category-card" href="technologie.html" style="background-image: url('images/technologie/technologie15.jpg');"><h3>Technologie</h3><p>Électronique et innovation</p></a>
+    </section>
+
+    <!-- NOUVELLES IMAGES -->
+    <h2 style="margin-top: 2.5rem;">Nouvelles images</h2>
+    <section class="grid" style="margin-top: 1rem;">
+      <div class="card">
+        <img src="images/paysages/paysage1.jpg" alt="">
+        <div class="card-body">
+          <div class="card-title">Paysage</div>
+          <div class="card-sub">Ajouté récemment</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/voitures/voiture5.jpg" alt="">
+        <div class="card-body">
+          <div class="card-title">Voiture</div>
+          <div class="card-sub">Ajouté récemment</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/wallpapers/wallpaper3.jpg" alt="">
+        <div class="card-body">
+          <div class="card-title">Wallpaper</div>
+          <div class="card-sub">Ajouté récemment</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/animaux/animaux4.jpg" alt="">
+        <div class="card-body">
+          <div class="card-title">Animaux</div>
+          <div class="card-sub">Ajouté récemment</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENDANCES -->
+    <h2 style="margin-top: 2.5rem;">Tendances</h2>
+    <section class="grid" style="margin-top: 1rem;">
+      <div class="card">
+        <img src="images/voyage/voyage12.jpg" alt="">
+        <div class="card-body">
+          <div class="card-title">Voyage</div>
+          <div class="card-sub">Très populaire</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/mode/mode8.jpg" alt="">
+        <div class="card-body">
+          <div class="card-title">Mode</div>
+          <div class="card-sub">Très populaire</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/sport/sport7.jpg" alt="">
+        <div class="card-body">
+          <div class="card-title">Sport</div>
+          <div class="card-sub">Très populaire</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/nourriture/nourriture10.jpg" alt="">
+        <div class="card-body">
+          <div class="card-title">Nourriture</div>
+          <div class="card-sub">Très populaire</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- FOOTER LOADER -->
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+  <!-- SCRIPT GLOBAL -->
+  <script src="script.js"></script>
+
+</body>
+</html>
