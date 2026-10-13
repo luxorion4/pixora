@@ -42,7 +42,14 @@ function generateImages(folder, prefix, number) {
     const card = document.createElement('article');
     card.className = 'card';
     const img = document.createElement('img');
-    img.src = `images/${folder}/${prefix}${i}.jpg`;
+    const uppercasePrefix =
+      (folder === 'mode' && i >= 2) ||
+      (folder === 'sport' && i >= 2) ||
+      folder === 'technologie' ||
+      (folder === 'voitures' && i >= 6) ||
+      (folder === 'voyage' && i !== 1 && i !== 17);
+    const filenamePrefix = uppercasePrefix ? prefix.toUpperCase() : prefix;
+    img.src = `images/${folder}/${filenamePrefix}${i}.jpg`;
     img.alt = `${prefix} ${i}`;
     img.onerror = () => {
       img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250"%3E%3Crect width="400" height="250" fill="%231f2937"/%3E%3Ctext x="200" y="130" fill="%23f8fafc" font-size="20" font-family="Arial, sans-serif" text-anchor="middle"%3EImage non disponible%3C/text%3E%3C/svg%3E';
