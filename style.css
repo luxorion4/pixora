@@ -50,9 +50,19 @@ h1, h2, h3, .brand {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
   font-weight: 800;
   font-size: 1.4rem;
   color: #f8fafc;
+}
+
+.brand-icon {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: 0 0 auto;
 }
 
 .topnav {
